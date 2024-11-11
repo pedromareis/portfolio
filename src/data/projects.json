@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "image": "https://static.wixstatic.com/media/bec2a3_6c8d14c98e64405baaada3a3a3425bcf~mv2.png/v1/fill/w_568,h_742,al_c,q_90,enc_auto/LoopOS-icon-shadow_6x.png",
+    "title": "LoopOS",
+    "description": "An AI powered ERP to manage all types of circular channels. With a set of modular apps you can setup and manage every step of the product lifecycle.",
+    "tech_stack": ["nextjs", "react", "rails"],
+    "slug": "loop-os"
+  },
+  {
+    "id": 2,
+    "image": "https://seeklogo.com/images/C/continente-hipermercados-logo-D8005E7534-seeklogo.com.png",
+    "title": "Sonae (Continente and Note!)",
+    "description": "A web platform to purchase school books.",
+    "tech_stack": ["nextjs", "react"],
+    "slug": "sonae-books"
+  },
+  {
+    "id": 3,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiC9OrvDopl20k0VkMXnsKZgaXmj-vHkQm9g&s",
+    "title": "ANF (Portuguese Pharmacies)",
+    "description": "A web platform to schedule services in local pharmacies.",
+    "tech_stack": ["nextjs", "react"],
+    "slug": "anf"
+  },
+  {
+    "id": 4,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0BXIC37m1DM90BDQ8VDFRBMDWG310WjFcpo1j8gqXzYsNCwTThQ7NjQ12_PcFJwXjA04&usqp=CAU",
+    "title": "Luope BuyOn",
+    "description": "A mobile app that allows the purchase of goods in vending machines through multiple virtual payment methods.",
+    "tech_stack": ["react-native", "nativescript"],
+    "slug": "buyon"
+  },
+  {
+    "id": 2,
+    "image": "https://play-lh.googleusercontent.com/shqTFfdpaLBp9CWQGIDKWhLryT4MqSuntcnvxRwlLA3zeKYUQvVsnSwl6puCLGXC0g",
+    "title": "Luope OnTheGo",
+    "description": "A mobile app to help organize the daily life of a vending machine operator (both technical rapairs and refill operators).",
+    "tech_stack": ["nativescript"],
+    "slug": "onthego"
+  }
+]

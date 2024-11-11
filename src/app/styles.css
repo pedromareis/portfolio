@@ -1,0 +1,40 @@
+.grid-container {
+  @apply bg-white rounded-sm;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: "Satoshi", sans-serif;
+}
+
+.rdg-header-sort-name {
+  @apply font-medium text-[14px];
+}
+
+.rdg-cell-frozen {
+  @apply bg-[#F8F9FA] !important;
+}
+
+.rdg-cell {
+  @apply bg-white text-[#495057] text-[14px];
+  border-right: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.rdg-text-editor {
+  @apply bg-white text-[#495057];
+}
+
+.grid-select2__control {
+  border: none !important;
+}
+
+.grid-select2__indicator-separator {
+  visibility: hidden;
+}
+
+.grid-select2__value-container {
+  @apply focus:outline-none focus-visible:outline-none !important;
+}
+.grid-select2__input-container {
+  @apply focus:outline-none focus-visible:outline-none !important;
+}
