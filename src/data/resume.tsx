@@ -181,7 +181,7 @@ export const DATA = {
     },
     {
       title: "Sonae Books",
-      href: "https://magicui.design",
+      href: "https://livrosescolares.continente.pt/",
       dates: "May 2020 - Present",
       active: true,
       description:
@@ -229,7 +229,7 @@ export const DATA = {
     },
     {
       title: "TicketLine - Access Control",
-      href: "https://automatic.chat",
+      href: "https://ticketline.sapo.pt/",
       dates: "2022-2023",
       active: true,
       description:
