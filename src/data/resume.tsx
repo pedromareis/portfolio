@@ -78,6 +78,7 @@ export const DATA = {
       logoUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy9eMOO0YlkHf9YOu6gRxSA8HOeWpDT62HgQ&s",
       start: "March 2020",
+      end: null,
       description:
         "Responsible for the frontend and mobile teams as well as their work (reviews, planning and give technical support), their career progress and their satisfaction with the company and its projects. Also, responsible for defining architecture, planning and technical decisions of The Loop Co.'s frontend and mobile projects. Mentoring new members (curricular internships, summer internships, new members onboarding,…). Frontend and mobile development, mainly using JavaScript based frameworks (mostly with ReactJS, Next.JS, React Native, Expo, HTML/CSS, among others) and Ruby On Rails.",
     },
@@ -90,6 +91,7 @@ export const DATA = {
       logoUrl:
         "https://yt3.googleusercontent.com/l1-sSlUlP9Mmb5FUghqQBxhgJlwqCkSMEi6O3R7Mfdinj_MoAJDDv1vJ5VH8TGIcSt5IcxUCkM0=s900-c-k-c0x00ffffff-no-rj",
       start: "Februrary 2022",
+      end: null,
       description:
         "Invited to teach the curricular unit of Scripting Languages (focused on JavaScript and ReactJS) for the bachelor's in Informatics Engineering.",
     },
@@ -198,6 +200,7 @@ export const DATA = {
         },
       ],
       image: "/sonae.png",
+      video: "",
       // video: "https://cdn.magicui.design/bento-grid.mp4",
     },
     {
@@ -221,6 +224,7 @@ export const DATA = {
         // },
       ],
       image: "/anf.png",
+      video: "",
       // video: "https://cdn.llm.report/openai-demo.mp4",
     },
     {
@@ -246,6 +250,7 @@ export const DATA = {
         },
       ],
       image: "/tl.png",
+      video: "",
       // video:
       //   "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
     },
