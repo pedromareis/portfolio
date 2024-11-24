@@ -1,11 +1,5 @@
 import { Icons } from "@/components/icons";
-import {
-  FileDown,
-  FileIcon,
-  HomeIcon,
-  NotebookIcon,
-  RocketIcon,
-} from "lucide-react";
+import { FileDown, HomeIcon, RocketIcon, Smartphone } from "lucide-react";
 
 export const DATA = {
   name: "Pedro Reis",
@@ -83,36 +77,34 @@ export const DATA = {
       title: "Head of Frontend & Mobile / Team Leader",
       logoUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy9eMOO0YlkHf9YOu6gRxSA8HOeWpDT62HgQ&s",
-      start: "May 2021",
-      end: "Oct 2022",
+      start: "March 2020",
       description:
-        "Implemented the Bitcoin discreet log contract (DLC) protocol specifications as an open source Typescript SDK. Dockerized all microservices and setup production kubernetes cluster. Architected a data lake using AWS S3 and Athena for historical backtesting of bitcoin trading strategies. Built a mobile app using react native and typescript.",
-    },
-    {
-      company: "IPC - ESTGOH",
-      badges: [],
-      href: "https://shopify.com",
-      location: "Coimbra, PT",
-      title: "Invited Assistant Professor",
-      logoUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGVcwVeIk81pW4w3kE193nvB5rwqU3LY0EOUwDHTnXvI8WOw7JWunO6LfQXWwJbhp3VmU&usqp=CAU",
-      start: "January 2021",
-      end: "April 2021",
-      description:
-        "Implemented a custom Kubernetes controller in Go to automate the deployment of MySQL and ProxySQL custom resources in order to enable 2,000+ internal developers to instantly deploy their app databases to production. Wrote several scripts in Go to automate MySQL database failovers while maintaining master-slave replication topologies and keeping Zookeeper nodes consistent with changes.",
+        "Responsible for the frontend and mobile teams as well as their work (reviews, planning and give technical support), their career progress and their satisfaction with the company and its projects. Also, responsible for defining architecture, planning and technical decisions of The Loop Co.'s frontend and mobile projects. Mentoring new members (curricular internships, summer internships, new members onboarding,…). Frontend and mobile development, mainly using JavaScript based frameworks (mostly with ReactJS, Next.JS, React Native, Expo, HTML/CSS, among others) and Ruby On Rails.",
     },
     {
       company: "IPC - ISEC",
-      href: "https://nvidia.com/",
+      href: "https://isec.pt/",
       badges: [],
       location: "Coimbra, PT",
       title: "Invited Assistant Professor",
       logoUrl:
         "https://yt3.googleusercontent.com/l1-sSlUlP9Mmb5FUghqQBxhgJlwqCkSMEi6O3R7Mfdinj_MoAJDDv1vJ5VH8TGIcSt5IcxUCkM0=s900-c-k-c0x00ffffff-no-rj",
-      start: "January 2020",
-      end: "April 2020",
+      start: "Februrary 2022",
       description:
-        "Architected and wrote the entire MVP of the GeForce Now Cloud Gaming internal admin and A/B testing dashboard using React, Redux, TypeScript, and Python.",
+        "Invited to teach the curricular unit of Scripting Languages (focused on JavaScript and ReactJS) for the bachelor's in Informatics Engineering.",
+    },
+    {
+      company: "IPC - ESTGOH",
+      badges: [],
+      href: "https://estgoh.ipc.pt",
+      location: "Coimbra, PT",
+      title: "Invited Assistant Professor",
+      logoUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGVcwVeIk81pW4w3kE193nvB5rwqU3LY0EOUwDHTnXvI8WOw7JWunO6LfQXWwJbhp3VmU&usqp=CAU",
+      start: "October 2021",
+      end: "July 2021",
+      description:
+        "Invited to teach the curricular units of Programming Fundamentals (in C) and Web Programming (HTML, CSS, JavaScript and ReactJS) for the specialization course in Informatics Technology (part of Deloitte's Bright Start Programm).",
     },
     {
       company: "Spotside (former Crossing Answers & Luope)",
@@ -122,39 +114,42 @@ export const DATA = {
       title: "Mobile Developer",
       logoUrl:
         "https://media.licdn.com/dms/image/v2/C4D0BAQH_ERWyRwVNAw/company-logo_200_200/company-logo_200_200/0/1672343880443?e=2147483647&v=beta&t=RkuAdF_ohsCSX9_yqfeAMalDbyUxWDeCY0ofljVH0IQ",
-      start: "January 2019",
-      end: "April 2019",
+      start: "October 2016",
+      end: "March 2020",
       description:
-        "Co-developed a prototype iOS app with another intern in Swift for the new Splunk Phantom security orchestration product (later publicly demoed and launched at .conf annual conference in Las Vegas). Implemented a realtime service for the iOS app in Django (Python) and C++; serialized data using protobufs transmitted over gRPC resulting in an approximate 500% increase in data throughput.",
+        "Responsible for the development and deploy of Crossing Answers and Luope mobile applications, using technologies such as Java Android, NativeScript and React Native (JavaScript based frameworks for mobile development).",
     },
   ],
   education: [
     {
       school: "IPC - ISEC",
-      href: "https://buildspace.so",
+      href: "https://isec.pt",
       degree:
         "MsC in Informatics and Systems - Software Development specialization",
       logoUrl:
         "https://yt3.googleusercontent.com/l1-sSlUlP9Mmb5FUghqQBxhgJlwqCkSMEi6O3R7Mfdinj_MoAJDDv1vJ5VH8TGIcSt5IcxUCkM0=s900-c-k-c0x00ffffff-no-rj",
-      start: "2023",
-      end: "2024",
+      start: "2021",
+      end: "2017",
+      description:
+        "Final grade: 16 out of 20. Master thesis in 'Applying a methodology to develop usability and UX heuristics' with a final grade of 18 out of 20. 3 Published papers in international conferences related to the master thesis.",
     },
     {
       school: "IPC - ISEC",
-      href: "https://uwaterloo.ca",
+      href: "https://isec.pt",
       degree:
-        "BsC in Informatics Engineering - Applications Development specialization",
+        "BsC in Informatics Engineering - Application Development specialization",
       logoUrl:
         "https://yt3.googleusercontent.com/l1-sSlUlP9Mmb5FUghqQBxhgJlwqCkSMEi6O3R7Mfdinj_MoAJDDv1vJ5VH8TGIcSt5IcxUCkM0=s900-c-k-c0x00ffffff-no-rj",
-      start: "2016",
-      end: "2021",
+      start: "2013",
+      end: "2017",
+      description: "Final grade: 13 out of 20",
     },
   ],
   projects: [
     {
       title: "LoopOS",
       href: "https://loop-os.com/",
-      dates: "Jan 2024 - Feb 2024",
+      dates: "Jan 2023 - Present",
       active: true,
       description:
         "The ecosystem for the circular economy. Composed by 8 applications, that go from ReactJS to Ruby on Rails, to create fully functional and customisable circular economy flows. Here, I've been leading all the frontend aspects of the development of the ReactJS apps.",
@@ -163,6 +158,7 @@ export const DATA = {
         "ReactJS",
         "TypeScript",
         "TailwindCSS",
+        "SASS",
         "Storybook",
         "Ruby on Rais",
       ],
@@ -178,103 +174,80 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image:
-        "https://static.wixstatic.com/media/bec2a3_485ad77389254e618fad2032a827b671~mv2.png/v1/fill/w_2470,h_1646,al_c,q_95,usm_0.66_1.00_0.01,enc_auto/core%20calculadora.png",
+      image: "/loopos.png",
       video: "",
     },
     {
       title: "Sonae Books",
       href: "https://magicui.design",
-      dates: "June 2023 - Present",
+      dates: "May 2020 - Present",
       active: true,
       description:
-        "Designed, developed and sold animated UI components for developers.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "Magic UI",
-      ],
+        "A web platform to purchase school books for the Sonae group, the biggest retailer in Portugal, where I've lead the frontend development of it.",
+      technologies: ["Next.js", "ReactJS", "TypeScript", "SASS"],
       links: [
         {
-          type: "Website",
-          href: "https://magicui.design",
+          type: "Continente",
+          href: "https://livrosescolares.continente.pt/",
           icon: <Icons.globe className="size-3" />,
         },
         {
-          type: "Source",
-          href: "https://github.com/magicuidesign/magicui",
-          icon: <Icons.github className="size-3" />,
+          type: "Note!",
+          href: "https://escolanote.pt/",
+          icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
-      video: "https://cdn.magicui.design/bento-grid.mp4",
+      image: "/sonae.png",
+      // video: "https://cdn.magicui.design/bento-grid.mp4",
     },
     {
-      title: "llm.report",
-      href: "https://llm.report",
-      dates: "April 2023 - September 2023",
+      title: "CVP / ANF",
+      href: "https://agendamento.farmaciasportuguesas.pt/",
+      dates: "2021 - Present",
       active: true,
       description:
-        "Developed an open-source logging and analytics platform for OpenAI: Log your ChatGPT API requests, analyze costs, and improve your prompts.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
+        "A web platform to schedule medical appointments in the Portuguese Pharmacies. I've worked on the frontend of 2 related applications (the public app and the backoffice one).",
+      technologies: ["Next.js", "ReactJS", "TypeScript", "SASS", "Material UI"],
       links: [
         {
           type: "Website",
-          href: "https://llm.report",
+          href: "https://agendamento.farmaciasportuguesas.pt/",
           icon: <Icons.globe className="size-3" />,
         },
-        {
-          type: "Source",
-          href: "https://github.com/dillionverma/llm.report",
-          icon: <Icons.github className="size-3" />,
-        },
+        // {
+        //   type: "Source",
+        //   href: "https://github.com/dillionverma/llm.report",
+        //   icon: <Icons.github className="size-3" />,
+        // },
       ],
-      image: "",
-      video: "https://cdn.llm.report/openai-demo.mp4",
+      image: "/anf.png",
+      // video: "https://cdn.llm.report/openai-demo.mp4",
     },
     {
-      title: "Automatic Chat",
+      title: "TicketLine - Access Control",
       href: "https://automatic.chat",
-      dates: "April 2023 - March 2024",
+      dates: "2022-2023",
       active: true,
       description:
-        "Developed an AI Customer Support Chatbot which automatically responds to customer support tickets using the latest GPT models.",
+        "A mobile app to validate the entrace to TicketLine events made with Expo (React Native).",
       technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
+        "React Native",
+        "Expo",
+        "Android",
+        "Fastlane",
+        "TypeScript",
+        "styled-components",
       ],
       links: [
         {
-          type: "Website",
-          href: "https://automatic.chat",
-          icon: <Icons.globe className="size-3" />,
+          type: "Android App (PlayStore)",
+          href: "https://play.google.com/store/apps/details?id=pt.ticketline.controlodeacessos&hl=pt_PT",
+          icon: <Smartphone className="size-3" />,
         },
       ],
-      image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+      image: "/tl.png",
+      // video:
+      //   "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
     },
   ],
   hackathons: [
