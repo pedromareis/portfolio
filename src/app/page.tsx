@@ -115,6 +115,20 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <section id="languages">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 9}>
+            <h2 className="text-xl font-bold">Languages</h2>
+          </BlurFade>
+          <div className="flex flex-wrap gap-1">
+            {DATA.languages.map((skill, id) => (
+              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
+                <Badge key={skill}>{skill}</Badge>
+              </BlurFade>
+            ))}
+          </div>
+        </div>
+      </section>
       <section id="projects">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
@@ -124,12 +138,12 @@ export default function Page() {
                   My Projects
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Check out my latest work
+                  Latest projects
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I&apos;ve worked on a variety of projects, from simple
-                  websites to complex web applications. Here are a few of my
-                  favorites.
+                  I've worked on a wide range of projects, from simple websites
+                  to complex web and mobile applications. Here are a few of the
+                  most challenging that I've loved to work on:
                 </p>
               </div>
             </div>
@@ -207,18 +221,25 @@ export default function Page() {
                 Contact
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Get in Touch
+                Get in touch
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Want to chat? Just shoot me a dm{" "}
-                <Link
-                  href={DATA.contact.social.X.url}
-                  className="text-blue-500 hover:underline"
+                Want to chat? Just contact me through{" "}
+                <a
+                  className="undeline text-blue-500 font-bold"
+                  href="mailto:pmreis27@gmail.com"
                 >
-                  with a direct question on twitter
-                </Link>{" "}
-                and I&apos;ll respond whenever I can. I will ignore all
-                soliciting.
+                  email
+                </a>{" "}
+                or{" "}
+                <a
+                  className="undeline text-blue-500 font-bold"
+                  href="https://www.linkedin.com/in/pedroreis95/"
+                  target="_blank"
+                >
+                  LinkedIn
+                </a>
+                .
               </p>
             </div>
           </BlurFade>

@@ -1,65 +1,79 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon } from "lucide-react";
+import {
+  FileDown,
+  FileIcon,
+  HomeIcon,
+  NotebookIcon,
+  RocketIcon,
+} from "lucide-react";
 
 export const DATA = {
   name: "Pedro Reis",
   initials: "PR",
-  url: "https://dillion.io",
-  location: "San Francisco, CA",
+  url: "https://pedro-reis-portfolio.vercel.app",
+  location: "Coimbra, Portugal",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description:
-    "Frontend Engineer. I love building beautiful interfaces, both web and mobile.",
+    "Frontend web and mobile engineer, creator of beautiful, user-friendly experiences.",
   summary:
     // "At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, [I pursued a double degree in computer science and business](/#education), [interned at big tech companies in Silicon Valley](https://www.youtube.com/watch?v=d-LJ2e5qKdE), and [competed in over 21 hackathons for fun](/#hackathons). I also had the pleasure of being a part of the first ever in-person cohort of buildspace called [buildspace sf1](https://buildspace.so/sf1).",
-    "A frontend engineer with a passion to create beautiful websites that have a major purpose! Love to mentor new members and get them to overcome all the dificulties I had while leaning in a quicker way. Crazy about the music scene and all the new music releases (my fridays usually start with me checking my Spotify for the new music friday playlist).",
+    // "Crazy about the music scene and all the new music releases (my fridays usually start with me checking my Spotify for the new music friday playlist).",
+    "I'm a frontend engineer based in Coimbra, Portugal, and currently Head of Frontend and Mobile at The Loop Co. I lead the development of sleek web and mobile apps using React, Next.js, and Ruby on Rails, with a passion for crafting beautiful, intuitive UIs and solving problems creatively (why settle for one solution when you can dream up five?).\n\nMentoring is a big part of who I am—I teach at the Polytechnic of Coimbra and love guiding interns at The Loop Co. to help them grow into amazing developers.\n\nWhen I'm not coding, you'll probably find me geeking out over music, concerts, or bingeing a great TV show.",
   avatarUrl:
     "https://media.licdn.com/dms/image/v2/C4D03AQGXVqKcgLOswA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1628973537338?e=1738195200&v=beta&t=qE7Au3Oh5DtwHpYSmkRVlPPq1NJYpijjPqg7EYdJOM0",
-  skills: ["React", "Next.js", "Typescript", "React-Native"],
+  skills: [
+    "React",
+    "Next.js",
+    "Typescript",
+    "TailwindCSS",
+    "SASS",
+    "React-Native",
+    "Expo",
+    "Native Script",
+    "Android",
+    "Ruby on Rails",
+  ],
+  languages: [
+    "Protuguese (Native)",
+    "English (C1)",
+    "Spanish (B1)",
+    "Italian (A2)",
+  ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
+    { href: "/future-work", icon: RocketIcon, label: "Future work" },
     // { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
-    email: "hello@example.com",
-    tel: "+123456789",
+    email: "pmreis27@gmail.com",
+    tel: "+35191506451",
     social: {
+      CV: {
+        name: "CV",
+        url: "mailto:pmreis27@gmail.com",
+        icon: FileDown,
+        navbar: true,
+      },
       GitHub: {
         name: "GitHub",
-        url: "https://dub.sh/dillion-github",
+        url: "https://github.com/pedromareis",
         icon: Icons.github,
-
         navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://dub.sh/dillion-linkedin",
+        url: "https://www.linkedin.com/in/pedroreis95/",
         icon: Icons.linkedin,
-
         navbar: true,
       },
-      X: {
-        name: "X",
-        url: "https://dub.sh/dillion-twitter",
-        icon: Icons.x,
-
-        navbar: true,
-      },
-      Youtube: {
-        name: "Youtube",
-        url: "https://dub.sh/dillion-youtube",
-        icon: Icons.youtube,
-        navbar: true,
-      },
-      email: {
-        name: "Send Email",
-        url: "#",
+      Email: {
+        name: "Email",
+        url: "mailto:pmreis27@gmail.com",
         icon: Icons.email,
-
-        navbar: false,
+        navbar: true,
       },
     },
   },
-
   work: [
     {
       company: "The Loop Co. / LoopOS",
