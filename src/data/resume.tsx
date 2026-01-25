@@ -13,8 +13,7 @@ export const DATA = {
     // "At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, [I pursued a double degree in computer science and business](/#education), [interned at big tech companies in Silicon Valley](https://www.youtube.com/watch?v=d-LJ2e5qKdE), and [competed in over 21 hackathons for fun](/#hackathons). I also had the pleasure of being a part of the first ever in-person cohort of buildspace called [buildspace sf1](https://buildspace.so/sf1).",
     // "Crazy about the music scene and all the new music releases (my fridays usually start with me checking my Spotify for the new music friday playlist).",
     "I'm a frontend engineer based in Coimbra, Portugal, and currently Head of Frontend and Mobile at The Loop Co. I lead the development of sleek web and mobile apps using React, Next.js, and Ruby on Rails, with a passion for crafting beautiful, intuitive UIs and solving problems creatively (why settle for one solution when you can dream up five?).\n\nMentoring is a big part of who I am—I teach at the Polytechnic of Coimbra and love guiding interns at The Loop Co. to help them grow into amazing developers.\n\nWhen I'm not coding, you'll probably find me geeking out over music, concerts, or bingeing a great TV show.",
-  avatarUrl:
-    "https://media.licdn.com/dms/image/v2/C4D03AQGXVqKcgLOswA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1628973537338?e=1738195200&v=beta&t=qE7Au3Oh5DtwHpYSmkRVlPPq1NJYpijjPqg7EYdJOM0",
+  avatarUrl: "/pedro_avatar.png",
   skills: [
     "React",
     "Next.js",
@@ -88,8 +87,7 @@ export const DATA = {
       badges: [],
       location: "Coimbra, PT",
       title: "Invited Assistant Professor",
-      logoUrl:
-        "https://yt3.googleusercontent.com/l1-sSlUlP9Mmb5FUghqQBxhgJlwqCkSMEi6O3R7Mfdinj_MoAJDDv1vJ5VH8TGIcSt5IcxUCkM0=s900-c-k-c0x00ffffff-no-rj",
+      logoUrl: "/isec_logo.jpg",
       start: "Februrary 2022",
       end: null,
       description:
@@ -128,8 +126,7 @@ export const DATA = {
       href: "https://isec.pt",
       degree:
         "MsC in Informatics and Systems - Software Development specialization",
-      logoUrl:
-        "https://yt3.googleusercontent.com/l1-sSlUlP9Mmb5FUghqQBxhgJlwqCkSMEi6O3R7Mfdinj_MoAJDDv1vJ5VH8TGIcSt5IcxUCkM0=s900-c-k-c0x00ffffff-no-rj",
+      logoUrl: "/isec_logo.jpg",
       start: "2021",
       end: "2017",
       description:
@@ -140,8 +137,7 @@ export const DATA = {
       href: "https://isec.pt",
       degree:
         "BsC in Informatics Engineering - Application Development specialization",
-      logoUrl:
-        "https://yt3.googleusercontent.com/l1-sSlUlP9Mmb5FUghqQBxhgJlwqCkSMEi6O3R7Mfdinj_MoAJDDv1vJ5VH8TGIcSt5IcxUCkM0=s900-c-k-c0x00ffffff-no-rj",
+      logoUrl: "/isec_logo.jpg",
       start: "2013",
       end: "2017",
       description: "Final grade: 13 out of 20",

@@ -35,7 +35,7 @@ export default function Page() {
                 <AvatarImage
                   alt={DATA.name}
                   src={DATA.avatarUrl}
-                  className="mt-[-2px] ml-[-2px]"
+                  className="ml-[-2px] object-cover"
                 />
                 <AvatarFallback>{DATA.initials}</AvatarFallback>
               </Avatar>
