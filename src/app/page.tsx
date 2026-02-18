@@ -1,250 +1,148 @@
-import { HackathonCard } from "@/components/hackathon-card";
-import BlurFade from "@/components/magicui/blur-fade";
-import BlurFadeText from "@/components/magicui/blur-fade-text";
-import { ProjectCard } from "@/components/project-card";
-import { ResumeCard } from "@/components/resume-card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { DATA } from "@/data/resume";
-import Link from "next/link";
-import Markdown from "react-markdown";
+"use client";
 
-const BLUR_FADE_DELAY = 0.04;
+import { Header } from "@/components/marketing/header-navigation/header";
+import { ArrowRight } from "@untitledui/icons";
+import { BadgeGroup } from "@/components/base/badges/badge-groups";
+import { Button } from "@/components/base/buttons/button";
+import { Form } from "@/components/base/form/form";
+import { Input } from "@/components/base/input/input";
+import { Projects } from "@/components/projects";
+import FlipWords from "@/components/flip-words";
 
 export default function Page() {
   return (
-    <main className="flex flex-col min-h-[100dvh] space-y-10">
-      <section id="hero">
-        <div className="mx-auto w-full max-w-2xl space-y-8">
-          <div className="gap-2 flex justify-between">
-            <div className="flex-col flex flex-1 space-y-1.5">
-              <BlurFadeText
-                delay={BLUR_FADE_DELAY}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-                yOffset={8}
-                text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
-              />
-              <BlurFadeText
-                className="max-w-[600px] md:text-xl"
-                delay={BLUR_FADE_DELAY}
-                text={DATA.description}
-              />
-            </div>
-            <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28 border bg-white">
-                <AvatarImage
-                  alt={DATA.name}
-                  src={DATA.avatarUrl}
-                  className="ml-[-2px] object-cover"
-                />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
-            </BlurFade>
-          </div>
-        </div>
+    <main>
+      <section id="header">
+        <Header
+          items={[
+            { label: "About Me", href: "#aboutme" },
+            { label: "Tech Stack", href: "#techstack" },
+            {
+              label: "Projects",
+              href: "#projects",
+              // menu: (
+              //   <DropdownMenuSimple
+              //     items={[
+              //       {
+              //         title: "Web",
+              //         subtitle: "Web platforms.",
+              //         href: "/mobile",
+              //       },
+              //       {
+              //         title: "Mobile",
+              //         subtitle: "Mobile applications.",
+              //         href: "/mobile",
+              //       },
+              //     ]}
+              //   />
+              // ),
+            },
+          ]}
+        />
       </section>
-      <section id="about">
-        <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold">About</h2>
-        </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
-            {DATA.summary}
-          </Markdown>
-        </BlurFade>
-      </section>
-      <section id="work">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 5}>
-            <h2 className="text-xl font-bold">Work Experience</h2>
-          </BlurFade>
-          {DATA.work.map((work, id) => (
-            <BlurFade
-              key={work.company}
-              delay={BLUR_FADE_DELAY * 6 + id * 0.05}
+
+      <section
+        id="header"
+        className="relative bg-primary py-16 lg:flex lg:min-h-180 lg:items-center lg:py-24"
+      >
+        <div className="mx-auto flex w-full max-w-container items-center px-4 md:px-8">
+          <div className="flex flex-col items-start md:max-w-3xl lg:w-1/2 lg:pr-8">
+            {/* <a
+              href="#"
+              className="rounded-[10px] outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-2"
             >
-              <ResumeCard
-                key={work.company}
-                logoUrl={work.logoUrl}
-                altText={work.company}
-                title={work.company}
-                subtitle={work.title}
-                href={work.href}
-                badges={work.badges}
-                period={`${work.start} - ${work?.end ?? "Present"}`}
-                description={work.description}
-              />
-            </BlurFade>
-          ))}
-        </div>
-      </section>
-      <section id="education">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 7}>
-            <h2 className="text-xl font-bold">Education</h2>
-          </BlurFade>
-          {DATA.education.map((education, id) => (
-            <BlurFade
-              key={education.school}
-              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
-            >
-              <ResumeCard
-                key={education.school}
-                logoUrl={education.logoUrl}
-                altText={education.school}
-                title={education.school}
-                subtitle={education.degree}
-                href={education.href}
-                period={`${education.start} - ${education.end}`}
-                description={education?.description}
-              />
-            </BlurFade>
-          ))}
-        </div>
-      </section>
-      <section id="skills">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 9}>
-            <h2 className="text-xl font-bold">Skills</h2>
-          </BlurFade>
-          <div className="flex flex-wrap gap-1">
-            {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
-              </BlurFade>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section id="languages">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 9}>
-            <h2 className="text-xl font-bold">Languages</h2>
-          </BlurFade>
-          <div className="flex flex-wrap gap-1">
-            {DATA.languages.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
-              </BlurFade>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section id="projects">
-        <div className="space-y-12 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 11}>
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                  Projects
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Latest projects
-                </h2>
-                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I've worked on a wide range of projects, from simple websites
-                  to complex web and mobile applications. Here are a few of the
-                  most challenging that I've loved to work on:
-                </p>
-              </div>
-            </div>
-          </BlurFade>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-            {DATA.projects.map((project, id) => (
-              <BlurFade
-                key={project.title}
-                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+              <BadgeGroup
+                className="hidden md:flex"
+                size="lg"
+                addonText="We're hiring!"
+                iconTrailing={ArrowRight}
+                theme="modern"
+                color="brand"
               >
-                <ProjectCard
-                  href={project.href}
-                  key={project.title}
-                  title={project.title}
-                  description={project.description}
-                  dates={project.dates}
-                  tags={project.technologies}
-                  image={project.image}
-                  video={project.video}
-                  links={project.links}
-                />
-              </BlurFade>
-            ))}
+                Join our remote team
+              </BadgeGroup>
+              <BadgeGroup
+                className="md:hidden"
+                size="md"
+                addonText="We're hiring!"
+                iconTrailing={ArrowRight}
+                theme="modern"
+                color="brand"
+              >
+                Join our remote team
+              </BadgeGroup>
+            </a> */}
+
+            <img
+              src="pedro_avatar.png"
+              alt="Pedro Reis Avatar"
+              className="h-40 w-40 rounded-full mb-4 object-cover"
+            />
+
+            <h1 className="mt-4 text-display-md font-semibold text-primary md:text-display-lg lg:text-display-xl">
+              👋 Hi, I'm Pedro!
+            </h1>
+            <p className="mt-4 mb-4 text-3xl text-balance text-tertiary md:mt-6 md:max-w-lg md:text-xl">
+              <FlipWords
+                words={[
+                  "Engineering Manager",
+                  "Team Lead",
+                  "Senior Frontend Engineer",
+                  "Senior Mobile Engineer",
+                ]}
+                className="text-purple-400 p-0 text-3xl font-extrabold"
+              />
+            </p>
+            <p className="text-3xl text-balance text-tertiary md:max-w-lg md:text-xl">
+              with a big passion for building beautiful web and mobile
+              applications and to turn teams into high-performing units.
+            </p>
+
+            {/* <Form
+              onSubmit={(e) => {
+                e.preventDefault();
+                const data = Object.fromEntries(new FormData(e.currentTarget));
+                console.log("Form data:", data);
+              }}
+              className="mt-8 flex w-full flex-col items-stretch gap-4 md:mt-12 md:max-w-120 md:flex-row md:items-start"
+            >
+              <Input
+                isRequired
+                size="md"
+                name="email"
+                type="email"
+                wrapperClassName="py-0.5"
+                placeholder="Enter your email"
+                hint={
+                  <span>
+                    We care about your data in our{" "}
+                    <a
+                      href="#"
+                      className="rounded-xs underline underline-offset-3 outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-2"
+                    >
+                      privacy policy
+                    </a>
+                    .
+                  </span>
+                }
+              />
+              <Button type="submit" size="xl">
+                Get started
+              </Button>
+            </Form> */}
           </div>
         </div>
+        {/* <div className="relative mt-16 h-60 w-full px-4 md:h-95 md:px-8 lg:absolute lg:inset-y-0 lg:right-0 lg:mt-0 lg:h-full lg:w-1/2 lg:px-0">
+          <img
+            className="inset-0 size-full object-cover lg:absolute"
+            src="https://www.untitledui.com/marketing/spirals.webp"
+            alt="Spirals"
+          />
+        </div> */}
       </section>
-      <section id="hackathons" className="hidden">
-        <div className="space-y-12 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 13}>
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                  Hackathons
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  I like building things
-                </h2>
-                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  During my time in university, I attended{" "}
-                  {DATA.hackathons.length}+ hackathons. People from around the
-                  country would come together and build incredible things in 2-3
-                  days. It was eye-opening to see the endless possibilities
-                  brought to life by a group of motivated and passionate
-                  individuals.
-                </p>
-              </div>
-            </div>
-          </BlurFade>
-          <BlurFade delay={BLUR_FADE_DELAY * 14}>
-            <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
-              {DATA.hackathons.map((project, id) => (
-                <BlurFade
-                  key={project.title + project.dates}
-                  delay={BLUR_FADE_DELAY * 15 + id * 0.05}
-                >
-                  <HackathonCard
-                    title={project.title}
-                    description={project.description}
-                    location={project.location}
-                    dates={project.dates}
-                    image={project.image}
-                    links={project.links}
-                  />
-                </BlurFade>
-              ))}
-            </ul>
-          </BlurFade>
-        </div>
-      </section>
-      <section id="contact">
-        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 16}>
-            <div className="space-y-3">
-              <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                Contact
-              </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Get in touch
-              </h2>
-              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Want to chat? Just contact me through{" "}
-                <a
-                  className="undeline text-blue-500 font-bold"
-                  href="mailto:pmreis27@gmail.com"
-                >
-                  email
-                </a>{" "}
-                or{" "}
-                <a
-                  className="undeline text-blue-500 font-bold"
-                  href="https://www.linkedin.com/in/pedroreis95/"
-                  target="_blank"
-                >
-                  LinkedIn
-                </a>
-                .
-              </p>
-            </div>
-          </BlurFade>
-        </div>
+
+      <section id="projects">
+        <Projects />
       </section>
     </main>
   );
