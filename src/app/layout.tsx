@@ -48,6 +48,22 @@ export const metadata: Metadata = {
   },
 };
 
+import localFont from "next/font/local";
+
+const GTStandard = localFont({
+  src: [
+    {
+      path: "../../public/fonts/GT-Standard/GT-Standard-S-Standard-Regular-Trial.woff2",
+      weight: "400",
+    },
+    {
+      path: "../../public/fonts/GT-Standard/GT-Standard-S-Standard-Bold-Trial.woff2",
+      weight: "700",
+    },
+  ],
+  variable: "--font-gt-standard",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -57,16 +73,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <link rel="icon" href="/favicon.ico" sizes="any" />
 
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
-          fontSans.variable
-        )}
-      >
+      <body className={`${GTStandard.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
             {children}
-            <Navbar />
+
+            {/* <Navbar /> */}
           </TooltipProvider>
         </ThemeProvider>
       </body>

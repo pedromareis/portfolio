@@ -1,251 +1,146 @@
-import { HackathonCard } from "@/components/hackathon-card";
+"use client";
+
 import BlurFade from "@/components/magicui/blur-fade";
-import BlurFadeText from "@/components/magicui/blur-fade-text";
-import { ProjectCard } from "@/components/project-card";
-import { ResumeCard } from "@/components/resume-card";
+import TypingText from "@/components/typing-text";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
-import Link from "next/link";
-import Markdown from "react-markdown";
+import { MeshGradient } from "@mesh-gradient/react";
+import { extractColors } from "extract-colors";
+import { useEffect, useState } from "react";
+import { NavBar } from "./nav-bar";
+import { AboutSection } from "./about-section";
+import { ExperienceSection } from "./experience-section";
+import { EducationSection } from "./education-section";
+import { ProjectsSection } from "./projects-section";
+import { ContactSection } from "./contact-section";
+import BlurFadeText from "@/components/magicui/blur-fade-text";
 
 const BLUR_FADE_DELAY = 0.04;
 
+const antiColors = ["#d22d29", "#736968", "#b1a7a6", "#211d1a", "#e8e8e8"];
+const mbdtfColors = [
+  "baac9b",
+  "#2bb49f",
+  "#007830",
+  "#f5c998",
+  "#360307",
+  "#707070",
+  "#dc0b34",
+];
+const aquariusColors = ["#6ea9af", "#206463", "#bedcde", "#101413"];
+
 export default function Page() {
+  const [image, setImage] = useState<string>("");
+  const [colors, setColors] = useState<string[]>([]);
+  const [theme, setTheme] = useState<string>("anti");
+
+  const [sectionColors, setSectionColors] = useState<string[]>([
+    "#204349",
+    "#baac9b",
+    "#010101",
+    "#010101",
+  ]);
+
+  useEffect(() => {
+    setSectionColors(
+      theme === "anti"
+        ? antiColors
+        : theme === "mbdtf"
+          ? mbdtfColors
+          : theme === "aquarius"
+            ? aquariusColors
+            : sectionColors,
+    );
+  }, [theme]);
+
+  const getMainColorsFromImage = (imageUrl: string): string[] => {
+    const src = imageUrl;
+
+    extractColors(src)
+      .then((colors) => {
+        console.log(colors);
+        setColors(colors.map((c) => c.hex));
+        setSectionColors(colors.map((c) => c.hex));
+      })
+      .catch(console.error);
+  };
+
+  const onImageChange = (event) => {
+    if (event.target.files && event.target.files[0]) {
+      let src = URL.createObjectURL(event.target.files[0]);
+      setImage(src);
+      console.log(event.target.files[0]);
+      getMainColorsFromImage(src);
+    }
+  };
+
   return (
-    <main className="flex flex-col min-h-[100dvh] space-y-10">
-      <section id="hero">
-        <div className="mx-auto w-full max-w-2xl space-y-8">
-          <div className="gap-2 flex justify-between">
-            <div className="flex-col flex flex-1 space-y-1.5">
-              <BlurFadeText
-                delay={BLUR_FADE_DELAY}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-                yOffset={8}
-                text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
-              />
-              <BlurFadeText
-                className="max-w-[600px] md:text-xl"
-                delay={BLUR_FADE_DELAY}
-                text={DATA.description}
-              />
-            </div>
-            <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28 border bg-white">
-                <AvatarImage
-                  alt={DATA.name}
-                  src={DATA.avatarUrl}
-                  className="ml-[-2px] object-cover"
-                />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
-            </BlurFade>
-          </div>
-        </div>
-      </section>
-      <section id="about">
-        <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold">About</h2>
-        </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
-            {DATA.summary}
-          </Markdown>
-        </BlurFade>
-      </section>
-      <section id="work">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 5}>
-            <h2 className="text-xl font-bold">Work Experience</h2>
-          </BlurFade>
-          {DATA.work.map((work, id) => (
-            <BlurFade
-              key={work.company}
-              delay={BLUR_FADE_DELAY * 6 + id * 0.05}
-            >
-              <ResumeCard
-                key={work.company}
-                logoUrl={work.logoUrl}
-                altText={work.company}
-                title={work.company}
-                subtitle={work.title}
-                href={work.href}
-                badges={work.badges}
-                period={`${work.start} - ${work?.end ?? "Present"}`}
-                description={work.description}
-              />
-            </BlurFade>
-          ))}
-        </div>
-      </section>
-      <section id="education">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 7}>
-            <h2 className="text-xl font-bold">Education</h2>
-          </BlurFade>
-          {DATA.education.map((education, id) => (
-            <BlurFade
-              key={education.school}
-              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
-            >
-              <ResumeCard
-                key={education.school}
-                logoUrl={education.logoUrl}
-                altText={education.school}
-                title={education.school}
-                subtitle={education.degree}
-                href={education.href}
-                period={`${education.start} - ${education.end}`}
-                description={education?.description}
-              />
-            </BlurFade>
-          ))}
-        </div>
-      </section>
-      <section id="skills">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 9}>
-            <h2 className="text-xl font-bold">Skills</h2>
-          </BlurFade>
-          <div className="flex flex-wrap gap-1">
-            {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
-              </BlurFade>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section id="languages">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 9}>
-            <h2 className="text-xl font-bold">Languages</h2>
-          </BlurFade>
-          <div className="flex flex-wrap gap-1">
-            {DATA.languages.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
-              </BlurFade>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section id="projects">
-        <div className="space-y-12 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 11}>
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                  Projects
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Latest projects
-                </h2>
-                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I've worked on a wide range of projects, from simple websites
-                  to complex web and mobile applications. Here are a few of the
-                  most challenging that I've loved to work on:
-                </p>
-              </div>
-            </div>
-          </BlurFade>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-            {DATA.projects.map((project, id) => (
-              <BlurFade
-                key={project.title}
-                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-              >
-                <ProjectCard
-                  href={project.href}
-                  key={project.title}
-                  title={project.title}
-                  description={project.description}
-                  dates={project.dates}
-                  tags={project.technologies}
-                  image={project.image}
-                  video={project.video}
-                  links={project.links}
-                />
-              </BlurFade>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section id="hackathons" className="hidden">
-        <div className="space-y-12 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 13}>
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                  Hackathons
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  I like building things
-                </h2>
-                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  During my time in university, I attended{" "}
-                  {DATA.hackathons.length}+ hackathons. People from around the
-                  country would come together and build incredible things in 2-3
-                  days. It was eye-opening to see the endless possibilities
-                  brought to life by a group of motivated and passionate
-                  individuals.
-                </p>
-              </div>
-            </div>
-          </BlurFade>
-          <BlurFade delay={BLUR_FADE_DELAY * 14}>
-            <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
-              {DATA.hackathons.map((project, id) => (
-                <BlurFade
-                  key={project.title + project.dates}
-                  delay={BLUR_FADE_DELAY * 15 + id * 0.05}
-                >
-                  <HackathonCard
-                    title={project.title}
-                    description={project.description}
-                    location={project.location}
-                    dates={project.dates}
-                    image={project.image}
-                    links={project.links}
+    <div>
+      <div className="absolute top-0 right-0 w-[100vw] font-sans">
+        <main className="flex flex-col max-h-screen space-y-10">
+          <NavBar setTheme={(theme: string) => setTheme(theme)} />
+
+          {/* <input type="file" onChange={onImageChange} className="mb-4" /> */}
+
+          <section id="header" className="relative px-20 py-10">
+            <MeshGradient
+              options={{
+                seed: 1,
+                colors: sectionColors,
+                isStatic: true,
+              }}
+              style={{ width: "100%", margin: 0, borderRadius: "32px" }}
+              className="rounded-sm"
+            ></MeshGradient>
+            <div
+              className="absolute inset-0 opacity-20 rounded-[32px]"
+              style={{
+                margin: "40px 80px",
+                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+              }}
+            ></div>
+            <div className="absolute inset-0 flex flex-col items-center justify-center rounded-sm">
+              <BlurFade delay={BLUR_FADE_DELAY} className="mb-4">
+                <Avatar className="size-28 bg-white shadow-lg">
+                  <AvatarImage
+                    alt={DATA.name}
+                    src={DATA.avatarUrl}
+                    className="ml-[-2px] object-cover"
                   />
-                </BlurFade>
-              ))}
-            </ul>
-          </BlurFade>
-        </div>
-      </section>
-      <section id="contact">
-        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 16}>
-            <div className="space-y-3">
-              <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                Contact
-              </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Get in touch
-              </h2>
-              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Want to chat? Just contact me through{" "}
-                <a
-                  className="undeline text-blue-500 font-bold"
-                  href="mailto:pmreis27@gmail.com"
-                >
-                  email
-                </a>{" "}
-                or{" "}
-                <a
-                  className="undeline text-blue-500 font-bold"
-                  href="https://www.linkedin.com/in/pedroreis95/"
-                  target="_blank"
-                >
-                  LinkedIn
-                </a>
-                .
+                  <AvatarFallback>{DATA.initials}</AvatarFallback>
+                </Avatar>
+              </BlurFade>
+              <p className="text-white text-5xl font-bold mb-4">
+                Hi, I'm <span className="font-serif text-5xl">Pedro</span>
               </p>
+              <TypingText
+                text={[
+                  "Engineering Manager",
+                  "Team Lead",
+                  "Senior Frontend Engineer",
+                  "Senior Mobile Engineer",
+                ]}
+                className="text-white text-3xl font-sans font-medium"
+                typingSpeed={100}
+                deletingSpeed={50}
+                pauseDuration={2000}
+                loop={true}
+                showCursor={true}
+                cursorCharacter="|"
+                cursorClassName="text-white"
+              />
             </div>
-          </BlurFade>
-        </div>
-      </section>
-    </main>
+          </section>
+
+          <div className="font-gt-standard">
+            <AboutSection color={sectionColors[0]} />
+            <ExperienceSection color={sectionColors[1]} />
+            <EducationSection color={sectionColors[2]} />
+            <ProjectsSection color={sectionColors[3]} />
+            <ContactSection color={sectionColors[0]} />
+          </div>
+        </main>
+      </div>
+    </div>
   );
 }
