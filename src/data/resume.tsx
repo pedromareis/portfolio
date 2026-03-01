@@ -8,11 +8,11 @@ export const DATA = {
   location: "Coimbra, Portugal",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description:
-    "Frontend web and mobile engineer, creator of beautiful, user-friendly experiences.",
+    "Team Lead & Senior Frontend Web & Mobile Engineer | Turning complex products into scalable, beautiful web experiences",
   summary:
     // "At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, [I pursued a double degree in computer science and business](/#education), [interned at big tech companies in Silicon Valley](https://www.youtube.com/watch?v=d-LJ2e5qKdE), and [competed in over 21 hackathons for fun](/#hackathons). I also had the pleasure of being a part of the first ever in-person cohort of buildspace called [buildspace sf1](https://buildspace.so/sf1).",
     // "Crazy about the music scene and all the new music releases (my fridays usually start with me checking my Spotify for the new music friday playlist).",
-    "I'm a frontend engineer based in Coimbra, Portugal, and currently Head of Frontend and Mobile at The Loop Co. I lead the development of sleek web and mobile apps using React, Next.js, and Ruby on Rails, with a passion for crafting beautiful, intuitive UIs and solving problems creatively (why settle for one solution when you can dream up five?).\n\nMentoring is a big part of who I am—I teach at the Polytechnic of Coimbra and love guiding interns at The Loop Co. to help them grow into amazing developers.\n\nWhen I'm not coding, you'll probably find me geeking out over music, concerts, or bingeing a great TV show.",
+    "I’m a frontend engineer based in Coimbra, Portugal, currently a Senior Frontend Engineer at XING, a strategic move to master enterprise-level engineering standards and high-scale collaboration. I’m looking to move back into a management role where I can stay hands-on with tech while helping teams grow.\n\nWith over 10 years of experience building modular web and mobile apps using React, Next.js, and React Native, I create reusable component systems that enable cross-team scalability. I love solving problems creatively-every challenge usually has more than one good solution, and I enjoy finding them. I’m passionate about mentoring and leading by example, whether teaching at the Polytechnic of Coimbra or guiding interns and teammates to become amazing developers.\n\nWhen I’m not coding, you’ll probably find me geeking out over music, concerts, or bingeing a great TV show.",
   avatarUrl: "/pedro_avatar.png",
   skills: [
     "React",
@@ -43,7 +43,7 @@ export const DATA = {
     social: {
       CV: {
         name: "CV",
-        url: "mailto:pmreis27@gmail.com",
+        url: "/Pedro-Reis-CV-Feb26.pdf",
         icon: FileDown,
         navbar: true,
       },
@@ -69,15 +69,26 @@ export const DATA = {
   },
   work: [
     {
+      company: "XING (part of New Work SE)",
+      href: "https://theloop.pt/",
+      badges: [],
+      location: "Porto, PT",
+      title: "Senior Frontend Engineer",
+      logoUrl: "/xing.png",
+      start: "May 2025",
+      end: null,
+      description:
+        "Responsible for the frontend and mobile teams as well as their work (reviews, planning and give technical support), their career progress and their satisfaction with the company and its projects. Also, responsible for defining architecture, planning and technical decisions of The Loop Co.'s frontend and mobile projects. Mentoring new members (curricular internships, summer internships, new members onboarding,…). Frontend and mobile development, mainly using JavaScript based frameworks (mostly with ReactJS, Next.JS, React Native, Expo, HTML/CSS, among others) and Ruby On Rails.",
+    },
+    {
       company: "The Loop Co. / LoopOS",
       href: "https://theloop.pt/",
       badges: [],
       location: "Coimbra, PT",
       title: "Head of Frontend & Mobile / Team Leader",
-      logoUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy9eMOO0YlkHf9YOu6gRxSA8HOeWpDT62HgQ&s",
-      start: "March 2020",
-      end: null,
+      logoUrl: "/loopco.jpeg",
+      start: "Mar 2020",
+      end: "Apr 2025",
       description:
         "Responsible for the frontend and mobile teams as well as their work (reviews, planning and give technical support), their career progress and their satisfaction with the company and its projects. Also, responsible for defining architecture, planning and technical decisions of The Loop Co.'s frontend and mobile projects. Mentoring new members (curricular internships, summer internships, new members onboarding,…). Frontend and mobile development, mainly using JavaScript based frameworks (mostly with ReactJS, Next.JS, React Native, Expo, HTML/CSS, among others) and Ruby On Rails.",
     },
@@ -88,8 +99,8 @@ export const DATA = {
       location: "Coimbra, PT",
       title: "Invited Assistant Professor",
       logoUrl: "/isec_logo.jpg",
-      start: "Februrary 2022",
-      end: null,
+      start: "Feb 2022",
+      end: "Jul 2025",
       description:
         "Invited to teach the curricular unit of Scripting Languages (focused on JavaScript and ReactJS) for the bachelor's in Informatics Engineering.",
     },
@@ -99,10 +110,9 @@ export const DATA = {
       href: "https://estgoh.ipc.pt",
       location: "Coimbra, PT",
       title: "Invited Assistant Professor",
-      logoUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGVcwVeIk81pW4w3kE193nvB5rwqU3LY0EOUwDHTnXvI8WOw7JWunO6LfQXWwJbhp3VmU&usqp=CAU",
-      start: "October 2021",
-      end: "July 2021",
+      logoUrl: "/estgoh.png",
+      start: "Oct 2021",
+      end: "Jul 2021",
       description:
         "Invited to teach the curricular units of Programming Fundamentals (in C) and Web Programming (HTML, CSS, JavaScript and ReactJS) for the specialization course in Informatics Technology (part of Deloitte's Bright Start Programm).",
     },
@@ -114,8 +124,8 @@ export const DATA = {
       title: "Mobile Developer",
       logoUrl:
         "https://media.licdn.com/dms/image/v2/C4D0BAQH_ERWyRwVNAw/company-logo_200_200/company-logo_200_200/0/1672343880443?e=2147483647&v=beta&t=RkuAdF_ohsCSX9_yqfeAMalDbyUxWDeCY0ofljVH0IQ",
-      start: "October 2016",
-      end: "March 2020",
+      start: "Oct 2016",
+      end: "Mar 2020",
       description:
         "Responsible for the development and deploy of Crossing Answers and Luope mobile applications, using technologies such as Java Android, NativeScript and React Native (JavaScript based frameworks for mobile development).",
     },

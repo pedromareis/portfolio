@@ -11,17 +11,16 @@ const BLUR_FADE_DELAY = 0.04;
 
 export default async function FutureWorkPage() {
   const futureWork = [
-    "Project information page",
-    "Add older projects (specially mobile apps)",
-    "Complete redesing of the app",
+    "Project information page with tech stack, description, links, biggest challenges, key features and more.",
+    "Add some older projects, specially mobile apps.",
+    "Develop a new version of the website with a revamped design and new features.",
+    "New section with my personal projects.",
   ];
 
   return (
     <section>
       <BlurFade delay={BLUR_FADE_DELAY}>
-        <h1 className="font-medium text-2xl mb-8 tracking-tighter">
-          Future work
-        </h1>
+        <h1 className="text-2xl font-bold mb-8">🚀 Future work</h1>
       </BlurFade>
       {futureWork.map((element, id) => (
         <BlurFade delay={BLUR_FADE_DELAY * 2 + id * 0.05} key={id}>
