@@ -78,7 +78,7 @@ export const DATA = {
       start: "May 2025",
       end: null,
       description:
-        "Responsible for the frontend and mobile teams as well as their work (reviews, planning and give technical support), their career progress and their satisfaction with the company and its projects. Also, responsible for defining architecture, planning and technical decisions of The Loop Co.'s frontend and mobile projects. Mentoring new members (curricular internships, summer internships, new members onboarding,…). Frontend and mobile development, mainly using JavaScript based frameworks (mostly with ReactJS, Next.JS, React Native, Expo, HTML/CSS, among others) and Ruby On Rails.",
+        "Develop and maintain new features for XING’s marketing platform, built with React.\nWrite and maintain comprehensive test coverage, including unit, integration, visual regression, and end-to-end tests, using Jest, Percy and Playwright. Collaborate closely with product and design teams to ensure alignment on priorities and scope.",
     },
     {
       company: "The Loop Co. / LoopOS",
